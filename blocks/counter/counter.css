@@ -1,22 +1,67 @@
+/* Container: Looks like a modern card */
 .counter {
-    /* Parent Styles */
-    background-color: grey;
-    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background-color: #ffffff;
+    padding: 15px 30px;
+    border-radius: 50px; /* Pill shape */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    width: fit-content;
+    margin: 20px 0;
+  }
   
-    /* Child: Button */
-    & button {
-      color: blue;
-      border: none;
-      
-      /* Grandchild: Hover state */
-      &:hover {
-        background-color: darkblue;
-      }
-    }
+  /* Number Display */
+  .counter span {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #333;
+    min-width: 40px;
+    text-align: center;
+    font-family: system-ui, -apple-system, sans-serif;
+  }
   
-    /* Child: Span */
-    & span {
-      font-size: 20px;
-      font-weight: bold;
-    }
+  /* Buttons: Shared Styles */
+  .counter button {
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%; /* Perfect circle */
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+  
+  /* Minus Button (Red) */
+  .counter .minus {
+    background-color: #fff0f0;
+    color: #ff4757;
+  }
+  
+  .counter .minus:hover {
+    background-color: #ff4757;
+    color: white;
+    transform: translateY(-2px); /* Moves up slightly */
+  }
+  
+  /* Plus Button (Green) */
+  .counter .plus {
+    background-color: #f0fff4;
+    color: #2ed573;
+  }
+  
+  .counter .plus:hover {
+    background-color: #2ed573;
+    color: white;
+    transform: translateY(-2px);
+  }
+  
+  /* Click effect (Active) */
+  .counter button:active {
+    transform: scale(0.95); /* Shrinks slightly when clicked */
   }
